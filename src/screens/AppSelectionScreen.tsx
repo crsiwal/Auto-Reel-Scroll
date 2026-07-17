@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { StyleSheet, View, FlatList, ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Searchbar, Text, useTheme } from 'react-native-paper';
+import { Searchbar, Text } from 'react-native-paper';
 import AccessibilityManager, { InstalledApp } from '../native/AccessibilityManager';
 import { AppListItem } from '../components/AppListItem';
 import { storage } from '../storage/storage';
+import { useAppTheme } from '../theme/theme';
 
 export function AppSelectionScreen() {
   const navigation = useNavigation();
-  const theme = useTheme();
+  const theme = useAppTheme();
 
   const [apps, setApps] = useState<InstalledApp[]>([]);
   const [loading, setLoading] = useState(true);

@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, Dimensions } from 'react-native';
-import { Card, Text, useTheme } from 'react-native-paper';
+import { Card, Text } from 'react-native-paper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useAppTheme } from '../theme/theme';
 
 interface StatsGridProps {
   todaySwipes: number;
@@ -19,7 +20,7 @@ export function StatsGrid({
   runningTime,
   averageInterval,
 }: StatsGridProps) {
-  const theme = useTheme();
+  const theme = useAppTheme();
 
   const formatTime = (ms: number): string => {
     if (ms <= 0) {

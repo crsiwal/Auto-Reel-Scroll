@@ -1,9 +1,9 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { useTheme } from 'react-native-paper';
 import { DashboardScreen } from '../screens/DashboardScreen';
 import { AppSelectionScreen } from '../screens/AppSelectionScreen';
 import { SettingsScreen } from '../screens/SettingsScreen';
+import { useAppTheme } from '../theme/theme';
 
 export type RootStackParamList = {
   Dashboard: undefined;
@@ -14,7 +14,7 @@ export type RootStackParamList = {
 const Stack = createStackNavigator<RootStackParamList>();
 
 export function AppNavigator() {
-  const theme = useTheme();
+  const theme = useAppTheme();
 
   return (
     <Stack.Navigator

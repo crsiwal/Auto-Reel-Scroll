@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
-import { Text, useTheme } from 'react-native-paper';
+import { Text } from 'react-native-paper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { InstalledApp } from '../native/AccessibilityManager';
+import { useAppTheme } from '../theme/theme';
 
 interface AppListItemProps {
   app: InstalledApp;
@@ -11,7 +12,7 @@ interface AppListItemProps {
 }
 
 export function AppListItem({ app, isSelected, onSelect }: AppListItemProps) {
-  const theme = useTheme();
+  const theme = useAppTheme();
 
   return (
     <TouchableOpacity

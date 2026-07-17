@@ -2,7 +2,7 @@ import React, { useState, useEffect, useLayoutEffect, useCallback } from 'react'
 import { StyleSheet, ScrollView, View } from 'react-native';
 import { useNavigation, useIsFocused } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { IconButton, useTheme, Card, Text } from 'react-native-paper';
+import { IconButton, Card, Text } from 'react-native-paper';
 import { RootStackParamList } from '../navigation/AppNavigator';
 import { useAccessibility } from '../hooks/useAccessibility';
 import { StatusCard } from '../components/StatusCard';
@@ -10,13 +10,14 @@ import { StatsGrid } from '../components/StatsGrid';
 import { ActionButtons } from '../components/ActionButtons';
 import AccessibilityManager from '../native/AccessibilityManager';
 import { storage } from '../storage/storage';
+import { useAppTheme } from '../theme/theme';
 
 type DashboardScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Dashboard'>;
 
 export function DashboardScreen() {
   const navigation = useNavigation<DashboardScreenNavigationProp>();
   const isFocused = useIsFocused();
-  const theme = useTheme();
+  const theme = useAppTheme();
 
   const { isAccessibilityEnabled, currentPackage, stats, refreshState } = useAccessibility();
 

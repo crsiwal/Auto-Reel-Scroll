@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Button, HelperText, useTheme } from 'react-native-paper';
+import { Button, HelperText } from 'react-native-paper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useAppTheme } from '../theme/theme';
 
 interface ActionButtonsProps {
   isAccessibilityEnabled: boolean;
@@ -22,7 +23,7 @@ export function ActionButtons({
   onStopService,
   onChooseTargetApp,
 }: ActionButtonsProps) {
-  const theme = useTheme();
+  const theme = useAppTheme();
 
   return (
     <View style={styles.container}>

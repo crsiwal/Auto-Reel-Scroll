@@ -1,4 +1,4 @@
-import { MD3LightTheme, MD3DarkTheme } from 'react-native-paper';
+import { MD3LightTheme, MD3DarkTheme, useTheme } from 'react-native-paper';
 
 export const themeLight = {
   ...MD3LightTheme,
@@ -37,3 +37,6 @@ export const themeDark = {
 };
 
 export type AppTheme = typeof themeLight;
+
+export const useAppTheme = () => useTheme<AppTheme>();
+

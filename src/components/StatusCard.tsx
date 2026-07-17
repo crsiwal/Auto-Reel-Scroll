@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Card, Text, Chip, useTheme } from 'react-native-paper';
+import { Card, Text, Chip } from 'react-native-paper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useAppTheme } from '../theme/theme';
 
 interface StatusCardProps {
   isAccessibilityEnabled: boolean;
@@ -18,7 +19,7 @@ export function StatusCard({
   selectedPackage,
   activePackage,
 }: StatusCardProps) {
-  const theme = useTheme();
+  const theme = useAppTheme();
 
   const isCurrentTargetActive = activePackage === selectedPackage && selectedPackage !== '';
 

@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, ScrollView, View } from 'react-native';
-import { Card, Text, Switch, List, useTheme, Button } from 'react-native-paper';
+import { Card, Text, Switch, List, Button } from 'react-native-paper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AccessibilityManager, { NativeSettings } from '../native/AccessibilityManager';
 import { storage } from '../storage/storage';
+import { useAppTheme } from '../theme/theme';
 
 const INTERVAL_OPTIONS = [5, 10, 15, 20, 30, 45, 60, 90, 120];
 
 export function SettingsScreen() {
-  const theme = useTheme();
+  const theme = useAppTheme();
 
   const [settings, setSettings] = useState<NativeSettings>({
     darkMode: false,
