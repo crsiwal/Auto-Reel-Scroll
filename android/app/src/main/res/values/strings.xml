@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Auto Reel Scroll</string>
+    <string name="accessibility_service_description">Auto Reel Scroll automatically performs swipe-up gestures on selected social media apps at your configured intervals. Enable this permission to start auto-scrolling.</string>
+</resources>
